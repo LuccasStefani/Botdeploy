@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { ctaContent } from "@/types/ctaData";
+import { BsTelegram } from "react-icons/bs";
 
 const Cta = () => {
   return (
@@ -42,7 +42,7 @@ const Cta = () => {
         </div>
 
         {/* Descrição */}
-        <p className="text-gray-300 w-full sm:text-2xl md:text-base">
+        <p className="text-neutral-400 w-full sm:text-2xl md:text-base">
           {ctaContent.description}
         </p>
 
@@ -52,20 +52,15 @@ const Cta = () => {
             <a
               key={i}
               href={btn.href || "https://t.me/botmilionoficial"}
-              className={`w-full sm:w-auto px-6 py-3 rounded-2xl transition ${
+              className={`w-full sm:w-auto px-6 py-3 rounded-2xl transition flex items-center justify-center gap-2 ${
                 btn.primary
-                  ? "bg-indigo-600/90 text-white"  
-                  : "flex items-center justify-center gap-2 bg-cyan-800 text-white hover:bg-green-700"  
+                  ? "bg-indigo-600/90 text-white"
+                  : "bg-cyan-800 text-white hover:bg-cyan-800"
               }`}
             >
               {btn.label}
-              {btn.icon && (
-                <Image
-                  src={btn.icon.src}
-                  alt={btn.icon.alt}
-                  width={btn.icon.width}
-                  height={btn.icon.height}
-                />
+              {!btn.primary && (
+                <BsTelegram className="w-6 h-6 text-white" /> 
               )}
             </a>
           ))}

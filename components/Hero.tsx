@@ -21,10 +21,9 @@ const Hero = () => {
 
         {/* Título principal */}
         <h1 className="linearGradientText w-full md:max-w-4xl text-4xl md:text-6xl leading-[130%] md:leading-[98%] tracking-[-0.03em] pb-3">
-          {/* Desktop */}
           <span className="hidden md:block">
             {heroContent.titleDesktop}
-            <Image
+            <img
               src="/textimg.png"
               alt="Bot Milion"
               width={40}
@@ -33,10 +32,9 @@ const Hero = () => {
             />
           </span>
 
-          {/* Mobile */}
           <span className="block md:hidden">
             {heroContent.titleMobile}
-            <Image
+            <img
               src="/textimg.png"
               alt="Bot Milion"
               width={30}
@@ -60,7 +58,7 @@ const Hero = () => {
                 className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-[#000319] overflow-hidden"
               >
                 <Image
-                  src={src.startsWith("/") ? src : "/" + src} 
+                  src={src.startsWith("/") ? src : "/" + src}
                   alt={`Membro ${i + 1}`}
                   width={32}
                   height={32}

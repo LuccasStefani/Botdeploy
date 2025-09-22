@@ -42,7 +42,6 @@ export function NavbarDemo() {
   return (
     <div className="relative w-full">
       <Navbar>
-        
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
@@ -53,7 +52,6 @@ export function NavbarDemo() {
           </div>
         </NavBody>
 
-    
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
