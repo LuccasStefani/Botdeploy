@@ -9,12 +9,11 @@ const Rwa = () => {
   return (
     <section className="w-full max-w-4xl mx-auto px-6 py-16" id="rwa">
       <main className="flex flex-col gap-6">
-        {/* Título animado */}
         <ShinyText
           text={rwaContent.shinyText}
           disabled={false}
           speed={3}
-          className="text-sm sm:text-base mb-2 mx-auto"
+          className="text-sm uppercase mx-auto"
         />
 
         {/* Headline */}

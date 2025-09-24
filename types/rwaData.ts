@@ -2,7 +2,7 @@
 import { RwaContent } from "./types";
 
 export const rwaContent: RwaContent = {
-    shinyText: "Nosso Método",
+    shinyText: "Entenda RWA",
     headline: {
         text: "Oque é um Token RWA (Real World Asset)",
         image: {

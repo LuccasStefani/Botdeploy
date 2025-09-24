@@ -9,8 +9,8 @@ const PoderSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#1D5A86]/20 rounded-full filter blur-3xl pointer-events-none"></div>
 
       <main className="flex flex-col gap-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full mb-8 gap-4 text-center md:text-left">
-          <h2 className="linearGradientText text-3xl md:text-4xl w-full md:max-w-[40%] leading-snug tracking-[-0.02em]">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-start w-full mb-8 gap-4">
+          <h2 className="linearGradientText text-3xl md:text-4xl w-full md:max-w-[40%] leading-snug tracking-[-0.02em] text-center md:text-left">
             {poderSectionContent.title}
           </h2>
 
@@ -18,7 +18,7 @@ const PoderSection = () => {
             text={poderSectionContent.subtitle}
             disabled={false}
             speed={3}
-            className="text-sm sm:text-base w-full max-w-[80%] md:max-w-[45%] mx-auto"
+            className="text-sm sm:text-base w-full max-w-[80%] md:max-w-[45%] mx-auto md:mx-0 md:text-right mt-5"
           />
         </div>
 

@@ -14,7 +14,7 @@ const Metodo = () => {
           text={metodoContent.title}
           disabled={false}
           speed={3}
-          className="text-sm sm:text-base mb-2 mx-auto"
+          className="text-sm mx-auto uppercase"
         />
 
         {/* Headline */}

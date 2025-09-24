@@ -45,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             text={`A viajem até  lua começa aqui`}
             disabled={false}
             speed={3}
-            className="text-sm sm:text-base mb-2 md:text-right text-center"
+            className="text-sm mt-2 uppercase md:text-right text-center"
           />
         </div>
 

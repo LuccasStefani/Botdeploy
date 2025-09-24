@@ -15,7 +15,7 @@ const Bento = () => {
           text={bentoContent.preText}
           disabled={false}
           speed={3}
-          className="text-sm sm:text-base mb-2 mx-auto"
+          className="text-sm uppercase mx-auto"
         />
 
         {/* Headline */}
