@@ -34,7 +34,7 @@ const Hero = () => {
 
           <span className="block md:hidden">
             {heroContent.titleMobile}
-            <img
+            <Image
               src="/textimg.png"
               alt="Bot Milion"
               width={30}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NotFoundPage() {
@@ -21,7 +22,7 @@ export default function NotFoundPage() {
       </Link>
 
       <div className="mt-10">
-        <img
+        <Image
           src="/BotApoiado.png"
           alt="404"
           className="w-64 md:w-96 mx-auto"

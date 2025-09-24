@@ -63,15 +63,15 @@ export default function Bot() {
               <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-[#000319] to-transparent" />
 
               {/* Conteúdo */}
-              <div className="relative z-10 text-center px-4">
+              <div className="relative z-10 text-center px-4 text-white linearGradientTextCta">
                 <p className="text-sm mb-2">{stat.title}</p>
-                <h3 className="text-5xl flex items-center justify-center">
+                <h3 className="text-5xl flex items-center justify-center text-white">
                   {prefix && <span>{prefix}</span>}
                   <CountUp
                     from={0}
                     to={number}
                     duration={2}
-                    className="inline-block linearGradientTextCta"
+                    className="inline-block "
                   />
                   {suffix && <span>{suffix}</span>}
                 </h3>

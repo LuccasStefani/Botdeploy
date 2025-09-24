@@ -65,7 +65,10 @@ const BotMilionCounterComponent: React.FC = () => {
                     className="inline-block w-2 h-2 rounded-full bg-green-500"
                     id="bm-statusDot"
                   ></span>
-                  <span id="bm-statusText" className="ml-15">Atualizado agora </span>:
+                  <span id="bm-statusText" className="ml-15">
+                    Atualizado agora{" "}
+                  </span>
+                  :
                   <b data-el="countdown" className="ml-1 text-green-500">
                     —
                   </b>
@@ -131,23 +134,29 @@ const BotMilionCounterComponent: React.FC = () => {
               </div>
 
               {/* Linha de fase */}
-              <div className="flex justify-between items-center gap-4 text-gray-500 text-sm mb-4 flex-wrap">
-                <div className="bm-phase-line inline-block">
-                  Fase atual: <b data-el="currentPhase">—</b> • Preços:{" "}
-                  <span className="inline-block px-2 py-0.5 rounded-full font-bold text-blue-600 bg-blue-100 border border-blue-200">
+              <div className="flex justify-between items-center gap-4 text-sm mb-4 flex-wrap">
+                <div className="bm-phase-line inline-block bg-gray-800/70 p-3 rounded-xl w-full md:w-auto border border-gray-700">
+                  <span className="font-semibold text-white">Fase atual:</span>{" "}
+                  <b data-el="currentPhase" className="text-green-400">
+                    —
+                  </b>{" "}
+                  • Preços:{" "}
+                  <span className="inline-block px-3 py-1 rounded-full font-bold text-blue-700 bg-blue-100 border border-blue-200">
                     Fase 1 - <span data-el="priceF1">$0.0011</span>
                   </span>{" "}
                   •{" "}
-                  <span className="inline-block px-2 py-0.5 rounded-full font-bold text-green-500 bg-green-100 border border-green-200">
+                  <span className="inline-block px-3 py-1 rounded-full font-bold text-green-700 bg-green-100 border border-green-200">
                     Fase 2 - <span data-el="priceF2">$0.0012</span>
                   </span>
                 </div>
-                <div>
+
+                <div className="text-white font-medium">
                   <span data-el="progressPct">0%</span> —{" "}
                   <span data-el="soldShort">—</span> /{" "}
                   <span data-el="capTotal">—</span> tokens
                 </div>
               </div>
+
               {/* Error box */}
               <div
                 className="text-red-500 text-sm mt-2 hidden"

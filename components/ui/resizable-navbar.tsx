@@ -42,12 +42,7 @@ interface MobileNavHeaderProps {
   className?: string;
 }
 
-interface MobileNavMenuProps {
-  children: React.ReactNode;
-  className?: string;
-  isOpen: boolean;
-  onClose: () => void;
-}
+ 
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -119,7 +114,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.ul
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "relative flex items-center rounded-2xl px-5 py-4 text-base font-medium text-zinc-600 transition duration-200 hover:text-zinc-800",
+        "relative flex items-center rounded-2xl px-5 py-4 text-base font-medium text-white transition duration-200 hover:text-zinc-800",
         className
       )}
     >
@@ -131,7 +126,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           <a
             onMouseEnter={() => setHovered(idx)}
             onClick={onItemClick}
-            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            className="relative px-4 py-2 text-white/80 hover:text-white"
             href={item.link}
           >
             {/* Hover do item */}
@@ -174,7 +169,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-[#0A0D1F]/80",
+        visible && " dark:bg-[#0A0D1F]/80 text-white",
         className,
       )}
     >
@@ -203,7 +198,11 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-}: MobileNavMenuProps) => {
+}: {
+  children: React.ReactNode;
+  className?: string;
+  isOpen: boolean;
+}) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -212,7 +211,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-18 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-[#0A0D1F]",
+            "text-whiteabsolute inset-x-0 top-18 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] bg-[#0A0D1F]",
             className,
           )}
         >
@@ -231,17 +230,29 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX
+      className="text-white dark:text-white cursor-pointer"
+      size={34}
+      onClick={onClick}
+    />
   ) : (
-    <Image src="/MenuMobile.svg" width={34} height={34} alt="Menu" className="mr-3" onClick={onClick}/>
+    <Image
+      src="/MenuMobile.svg"
+      width={34}
+      height={34}
+      alt="Menu"
+      className="mr-3 cursor-pointer"
+      onClick={onClick}
+    />
   );
 };
+
 
 export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 flex items-center space-x-2 px-4 py-1 text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2 px-4 py-1 text-sm "
     >
       <Image
         src="/logo.png"
@@ -250,7 +261,7 @@ export const NavbarLogo = () => {
         height={45}
         className="-mt-3"
       />
-      <span className="font-medium text-xl ml-2 text-white dark:text-white">Bot Milion</span>
+      <span className="font-medium text-2xl ml-2 text-white dark:text-white linearGradientText">Bot Milion</span>
     </a>
   );
 };
@@ -273,7 +284,7 @@ export const NavbarButton = ({
     | React.ComponentPropsWithoutRef<"button">
   )) => {
   const baseStyles =
-    "px-6 py-3 ml-5 rounded-2xl gap-2 flex items-center bg-cyan-800 button bgd-white text-white text-base font-normal relative cursor-pointer hover:-translate-y-0.5 transition duration-200 z-99";
+    "px-6 py-3 md:ml-5 rounded-2xl gap-2 flex items-center bg-cyan-800 button bgd-white text-white text-base font-normal relative cursor-pointer hover:-translate-y-0.5 transition duration-200 z-99";
 
   const variantStyles = {
     primary:

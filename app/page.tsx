@@ -3,6 +3,7 @@
 import Bento from "@/components/Bento";
 import BotMilionCounter from "@/components/BotMilionCounter";
 import BoxCta from "@/components/BoxCta";
+import Cycle from "@/components/Cycle";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Metodo from "@/components/Metodo";
@@ -28,6 +29,7 @@ export default function Home() {
           <NavbarDemo />
           <Hero />
           <BotMilionCounter />
+          <Cycle />
           <Metodo />
           <Bento />
           <PoderSection />
