@@ -412,3 +412,8 @@ html {
   z-index: 1000;
 }
 
+h1, .no-translate {
+  translate: no;
+  -webkit-user-select: auto;
+  -webkit-touch-callout: none;
+}
