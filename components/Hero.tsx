@@ -1,15 +1,27 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import ShinyText from "./ShinyText";
 import Bot from "./Bot";
 import { heroContent } from "@/types/types";
 
 const Hero = () => {
+  const [copied, setCopied] = useState(false);
+  const contractAddress = "0xD10d6F1d4b905b67735a62079743723E6f3C19C3";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // volta ao normal depois de 2s
+    } catch (err) {
+      console.error("Erro ao copiar:", err);
+    }
+  };
+
   return (
     <section className="relative w-full min-h-screen flex flex-col" id="hero">
       <div className="relative z-10 container mx-auto px-3 flex flex-col items-center justify-start text-center flex-grow pt-40">
-        {/* Pré-texto */}
         <div className="flex items-center gap-2 mb-6 rounded-full bg-zinc-800/40 border border-neutral-500/30 px-5 py-2">
           <ShinyText
             text={heroContent.preText}
@@ -73,7 +85,7 @@ const Hero = () => {
         </div>
 
         {/* Botões */}
-        <div className="flex flex-row flex-wrap justify-center gap-2 w-full sm:w-auto mb-10 z-98">
+        <div className="flex flex-row flex-wrap justify-center gap-2 w-full sm:w-auto mb-6 z-98">
           {heroContent.buttons.map((btn, i) => (
             <a
               key={i}
@@ -90,6 +102,25 @@ const Hero = () => {
               )}
             </a>
           ))}
+        </div>
+
+        <div className="flex items-center justify-between px-5 bg-zinc-800/40 border border-neutral-500/30 rounded-lg py-3 mb-10 z-99">
+          <span className="text-sm sm:text-base text-neutral-400 font-medium mr-3">
+            Contrato:
+          </span>
+
+
+          <div className="flex items-center gap-3">
+            <span className="text-sm sm:text-base text-neutral-300 break-all">
+              {contractAddress}
+            </span>
+            <button
+              onClick={handleCopy}
+              className="px-3 py-1.5 rounded-md bg-white text-black text-sm font-medium hover:bg-gray-200 transition"
+            >
+              {copied ? "Copiado!" : "Copiar"}
+            </button>
+          </div>
         </div>
 
         {/* Bot abaixo */}
