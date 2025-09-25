@@ -7,7 +7,7 @@ import { heroContent } from "@/types/types";
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
-  const contractAddress = "0xD10d6F1d4b905b67735a62079743723E6f3C19C3";
+  const contractAddress = "0x188698f21f468b5922008edC17A7976994d1Cce3";
 
   const handleCopy = async () => {
     try {
