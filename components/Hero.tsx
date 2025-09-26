@@ -104,7 +104,7 @@ const Hero = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-between px-5 bg-zinc-800/40 border border-neutral-500/30 rounded-lg py-3 mb-10 z-99">
+        <div className="flex items-center justify-between px-5 bg-zinc-800/40 border border-neutral-500/30 rounded-2xl py-3 mb-10 z-99">
           <span className="text-sm sm:text-base text-neutral-400 font-medium mr-3">
             Contrato:
           </span>

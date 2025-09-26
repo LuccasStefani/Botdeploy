@@ -28,13 +28,13 @@ export const heroContent: HeroContent = {
     ],
     buttons: [
         {
-            label: "Compre Na Pré Venda",
-            href: "#prevenda",
+            label: "Comprar com PIX",
+            href: "https://app.pixswap.trade/pre-venda/btmilion ",
             primary: true,
         },
         {
-            label: "Bot Milion",
-            href: "#roadmap",
+            label: "Comprar com USDT",
+            href: "https://presale.botmilion.com",
             primary: false,
         },
     ],
